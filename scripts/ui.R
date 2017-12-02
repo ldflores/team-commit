@@ -7,7 +7,7 @@ shinyUI(fluidPage(
   navbarPage("stats!",
     tabPanel("Summary", 
       mainPanel(
-        includemd("README.md")
+        includeMarkdown("README.md")
       ),
     tabPanel("Salary by Major",
       sidebarLayout(
