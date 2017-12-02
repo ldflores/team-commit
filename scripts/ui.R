@@ -2,9 +2,8 @@ library(shiny)
 library(rsconnect)
 
 
-# Show a tabset that includes a plot, summary, and
-# table view of the generated distribution
-my.ui <- fluidPage(
+# Show a tabset that includes a summary and 2 plots.
+shinyUI(fluidPage(
   navbarPage("stats!",
     tabPanel("Summary", 
       mainPanel(
@@ -13,8 +12,8 @@ my.ui <- fluidPage(
     tabPanel("Salary by Major",
       sidebarLayout(
         sidebarPanel(
-          radioButtons("dist", "Select major category:",
-                       c(majors$Major_category))
+          radioButtons("Major_category", "Select major category:",
+                       c(data$Major_category))
         )
       ),
       mainPanel(
@@ -34,3 +33,4 @@ my.ui <- fluidPage(
    )
   )
  )
+)
