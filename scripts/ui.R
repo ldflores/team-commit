@@ -18,7 +18,7 @@ my.ui <- fluidPage(
         )
       ),
       mainPanel(
-        plotOutput("plot")
+        plotOutput("scatter")
       ),
     tabPanel("Average Salary", 
       sidebarLayout(
