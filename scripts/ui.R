@@ -4,7 +4,7 @@ library(rsconnect)
 
 # Show a tabset that includes a plot, summary, and
 # table view of the generated distribution
-my.ui <- fluidPage(
+shinyUI(fluidPage(
   navbarPage("stats!",
     tabPanel("Summary", 
       mainPanel(
@@ -34,3 +34,4 @@ my.ui <- fluidPage(
    )
   )
  )
+)
