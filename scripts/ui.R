@@ -5,7 +5,7 @@ library(rsconnect)
 # Show a tabset that includes a plot, summary, and
 # table view of the generated distribution
 shinyUI(fluidPage(
-  navbarPage("stats!",
+  navbarPage("Stats!",
     tabPanel("Summary", 
       mainPanel(
         includeMarkdown("README.md")
@@ -13,8 +13,8 @@ shinyUI(fluidPage(
     tabPanel("Salary by Major",
       sidebarLayout(
         sidebarPanel(
-          radioButtons("dist", "Select major category:",
-                       c(majors$Major_category))
+          radioButtons("Major_category", "Select major category:",
+                       c(Major$Major_category))
         )
       ),
       mainPanel(
