@@ -11,7 +11,7 @@ selected <- data %>% mutate(salary_variability = P75th - P25th)
 shinyServer(function(input, output) {
   # put scatter plot here as output$scatter
   output$scatter <- renderPlot({
-    filtered <- selected %>% filter(Major_category == input$dist)
+    filtered <- selected %>% filter(Major_category == input$data)
     ggplot(filtered, aes(x = salary_variability, y = Median, color = Major_category)) +
       geom_point()
   })
