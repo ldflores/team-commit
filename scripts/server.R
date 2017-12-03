@@ -2,7 +2,7 @@ library(dplyr)
 library(ggplot2)
 
 # get data into dataframe
-data <- read.csv('all-ages.csv', stringsAsFactors = FALSE)
+data <- read.csv(file = 'all-ages.csv', stringsAsFactors = FALSE, header = TRUE)
 
 # compute salary variability column to be used in graph
 selected <- data %>% mutate(salary_variability = P75th - P25th)
