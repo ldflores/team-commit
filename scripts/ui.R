@@ -14,7 +14,7 @@ shinyUI(fluidPage(
       sidebarLayout(
         sidebarPanel(
           radioButtons("Major_category", "Select major category:",
-                       c(Major$Major_category))
+                       c(data$Major_category))
         )
       ),
       mainPanel(
