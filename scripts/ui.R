@@ -9,30 +9,29 @@ shinyUI(fluidPage(
     tabPanel("Summary", 
       mainPanel(
         includeMarkdown("README.md")
-      ),
+      )
+    ),
     tabPanel("Salary by Major",
       sidebarLayout(
         sidebarPanel(
           radioButtons("Major_category", "Select major category:",
-                       c(data$Major_category))
+                       get_Major_Cat)
+        ),
+        mainPanel(
+          plotOutput("scatter")
         )
-      ),
-      mainPanel(
-        plotOutput("scatter")
-      ),
+      )
+    ),
     tabPanel("Average Salary", 
       sidebarLayout(
         sidebarPanel(
-                                              
+          #placeholder
+        ),
+        mainPanel(
+          plotOutput("plot")
         )
-      ),
-      mainPanel(
-        plotOutput("plot")
       )
-     )
     )
-   )
   )
- )
 )
-,
+)
