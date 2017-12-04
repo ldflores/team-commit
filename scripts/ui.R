@@ -1,7 +1,7 @@
 library(shiny)
 library(rsconnect)
 
-
+get_Major_Cat <- unique(c(selected$Major_category))
 # Show a tabset that includes a plot, summary, and
 # table view of the generated distribution
 shinyUI(fluidPage(
