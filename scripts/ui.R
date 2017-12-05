@@ -6,6 +6,7 @@ get_Major_Cat <- unique(c(selected$Major_category))
 # table view of the generated distribution
 shinyUI(fluidPage(
   navbarPage("Stats!",
+
              tabPanel("Summary", 
                       mainPanel(
                         includeMarkdown("README.md")
@@ -35,3 +36,5 @@ shinyUI(fluidPage(
   )
 )
 )
+
+

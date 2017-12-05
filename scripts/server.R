@@ -18,6 +18,6 @@ shinyServer(function(input, output) {
   })
   
   # put boxplot here as output$boxplot
-  
+ 
   
 })
