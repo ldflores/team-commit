@@ -25,7 +25,7 @@ shinyUI(fluidPage(
         )
       )
     ),
-    tabPanel("Average Salary", 
+    tabPanel("Median Salary", 
       sidebarLayout(
         sidebarPanel(
           checkboxGroupInput("Major_category", 
