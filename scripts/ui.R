@@ -14,7 +14,7 @@ shinyUI(fluidPage(
     tabPanel("Salary by Major",
       sidebarLayout(
         sidebarPanel(
-          checkboxGroupInput("Major_category", "Select Major Category:", get_Major_Cat) 
+          checkboxGroupInput("Major_category", "Select Major Category:", get_Major_Cat, selected = "Agriculture & Natural Resources") 
           #I don't know how to select one to start
         ),
         mainPanel(
