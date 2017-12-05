@@ -18,6 +18,10 @@ shinyServer(function(input, output) {
   })
   
   # put boxplot here as output$boxplot
- 
-  
+ output$box <- renderPlot({
+   choose <- data %>% filter(Major_category == input$Major_category)
+   g <- ggplot(get_data, aes(x = Major_category, y = Median)) +
+     geom_boxplot()
+   g + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+ })
 })
