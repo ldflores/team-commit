@@ -14,8 +14,8 @@ shinyUI(fluidPage(
     tabPanel("Salary by Major",
       sidebarLayout(
         sidebarPanel(
-          radioButtons("Major_category", "Select major category:",
-                       get_Major_Cat)
+          checkboxGroupInput("Major_category", "Select Major Category:", get_Major_Cat) 
+          #I don't know how to select one to start
         ),
         mainPanel(
           plotOutput("scatter")
