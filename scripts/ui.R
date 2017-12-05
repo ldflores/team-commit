@@ -15,7 +15,7 @@ shinyUI(fluidPage(
       sidebarLayout(
         sidebarPanel(
           checkboxGroupInput("Major_category", "Select Major Category:", get_Major_Cat, selected = "Agriculture & Natural Resources") 
-          #I don't know how to select one to start
+          
         ),
         mainPanel(
           plotOutput("scatter")
