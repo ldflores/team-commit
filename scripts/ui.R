@@ -16,31 +16,31 @@ shinyUI(fluidPage(
     ),
     tabPanel("Salary by Major",
       sidebarLayout(
-        sidebarPanel(
-          checkboxGroupInput("Major_category",
-                             "Select Major Category:", 
-                              get_Major_Cat, 
-                              selected = "Agriculture & Natural Resources") 
-          
+          sidebarPanel(
+            checkboxGroupInput("Major_category",
+                               "Select Major Category:", 
+                                get_Major_Cat, 
+                                selected = "Agriculture & Natural Resources") 
+                          
+          ),
+          mainPanel(
+            plotOutput("scatter")
+           )
+          )
         ),
-        mainPanel(
-          plotOutput("scatter")
-        )
-      )
-    ),
-    tabPanel("Median Salary", 
-      sidebarLayout(
-        sidebarPanel(
-          checkboxGroupInput("Major_cat", 
-                             "Select Major Category:", 
-                              get_Major_Cat, 
-                              selected = "Agriculture & Natural Resources")
-        ),
-        mainPanel(
-          plotOutput("box")
-        )
-      )
-    )
-  )
+        tabPanel("Median Salary", 
+          sidebarLayout(
+            sidebarPanel(
+              checkboxGroupInput("Major_cat", 
+                                 "Select Major Category:", 
+                                  get_Major_Cat, 
+                                  selected = "Agriculture & Natural Resources")
+            ),
+            mainPanel(
+              plotOutput("box")
+            )
+         )
+       )
+   )
 )
 )
