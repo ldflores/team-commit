@@ -56,9 +56,23 @@ shinyUI(fluidPage(
                 to major in a field of engineering should know that it has a high variance in salary.
                 The major categories with the lowest median salaries are education majors. A student 
                 looking to pursue education will find this information valuable. ")
+
             )
          )
+       ),
+        tabPanel("Employment Rates",
+                 sidebarLayout(
+                   sidebarPanel(
+                     checkboxGroupInput("Major_cat", 
+                                        "Select Major Category:", 
+                                        get_Major_Cat, 
+                                        selected = "Agriculture & Natural Resources")
+                   ),
+                mainPanel(
+                plotOutput("scatter2")
+                ) 
+           )
        )
-   )
+    )
 )
 )

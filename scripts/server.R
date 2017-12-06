@@ -35,4 +35,12 @@ shinyServer(function(input, output) {
       xlab("Major Category") +
       ylab("Salary Range")
   })
+  
+  output$scatter2 <- renderPlot({
+    filtered <- selected %>% filter(Major_category == input$Major_category)
+    ggplot(filtered, aes(x = Major, y = Unemployment_rate, color = Major_category)) +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+      geom_point()
+    
+  })
 })
