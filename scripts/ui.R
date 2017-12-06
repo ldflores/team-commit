@@ -64,7 +64,7 @@ shinyUI(fluidPage(
      tabPanel("Employment Rates",
                  sidebarLayout(
                    sidebarPanel(
-                     checkboxGroupInput("Major_cat", 
+                     checkboxGroupInput("Major_ct", 
                                         "Select Major Category:", 
                                         get_Major_Cat, 
                                         selected = "Agriculture & Natural Resources")
