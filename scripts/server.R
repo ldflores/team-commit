@@ -13,15 +13,20 @@ shinyServer(function(input, output) {
   # put scatter plot here as output$scatter
   output$scatter <- renderPlot({
     filtered <- selected %>% filter(Major_category == input$Major_category)
-    ggplot(filtered, aes(x = salary_variability, y = Median, color = Major_category)) +
+    ggplot(filtered, aes(x = salary_variability, y = Median, color = Major_category)) + 
+      xlab("Salary Variability") + ylab("Median Salary") +
+      ggtitle("Variablity in Salaries by College Majors") +
       geom_point()
   })
   
   # put boxplot here as output$boxplot
  output$box <- renderPlot({
    choose <- selected %>% filter(Major_category == input$Major_category)
-   g <- ggplot(get_data, aes(x = Major_category, y = Median)) +
+   g <- ggplot(get_data, aes(x = Major_category, y = Median, color = Major_category)) +
      geom_boxplot()
-   g + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+   g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+     ggtitle("Boxplot of Range of Salaries \nfor Different Majors") +
+     xlab("Major Category") +
+     ylab("Salary Range")
  })
 })
