@@ -1,10 +1,12 @@
 library(shiny)
 library(rsconnect)
+install.packages("shinythemes")
 
 get_Major_Cat <- unique(c(selected$Major_category))
 # Show a tabset that includes a plot, summary, and
 # table view of the generated distribution
 shinyUI(fluidPage(
+  theme = shinythemes::shinytheme("slate"),
   navbarPage("Stats!",
     tabPanel("Summary", 
       mainPanel(
