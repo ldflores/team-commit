@@ -14,6 +14,7 @@ shinyUI(fluidPage(
         includeMarkdown("README.md")
       )
     ),
+    # Make a scater plot of salary by major category
     tabPanel("Salary by Major",
       sidebarLayout(
           sidebarPanel(
@@ -28,7 +29,8 @@ shinyUI(fluidPage(
            )
           )
         ),
-        tabPanel("Median Salary", 
+    #Make boxplot that will compare summary statistics for the majors that are selected, divided by category of major.  
+    tabPanel("Median Salary", 
           sidebarLayout(
             sidebarPanel(
               checkboxGroupInput("Major_cat", 

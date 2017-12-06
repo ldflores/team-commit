@@ -11,7 +11,7 @@ selected <- get_data %>% mutate(salary_variability = P75th - P25th)
 get_Major_Cat <- unique(c(selected$Major_category))
 
 shinyServer(function(input, output) {
-  # make a scatter plot as output$scatter
+  # make a scatter plot that compares salaries across categories of majors
   output$scatter <- renderPlot({
     filtered <- selected %>% filter(Major_category == input$Major_category)
     ggplot(filtered, aes(x = salary_variability, y = Median, color = Major_category)) + 
@@ -20,7 +20,7 @@ shinyServer(function(input, output) {
       geom_point()
   })
   
-  # make a boxplot as output$boxplot
+  # make a boxplot that chooses a category in a major, and graphs either single or side by side boxplot depending on input
   output$box <- renderPlot({
     choose <- selected %>% filter(Major_category == input$Major_cat)
     g <- ggplot(choose, aes(x = Major_category, y = Median, color = Major_category)) +
