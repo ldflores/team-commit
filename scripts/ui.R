@@ -1,7 +1,7 @@
 #load and install libraries needed
 library(shiny)
 library(rsconnect)
-install.packages("shinythemes")
+library(shinythemes)
 
 get_Major_Cat <- unique(c(selected$Major_category))
 # Show a tabset that includes a plot, summary, and
@@ -31,7 +31,7 @@ shinyUI(fluidPage(
     tabPanel("Median Salary", 
       sidebarLayout(
         sidebarPanel(
-          checkboxGroupInput("Major_category", 
+          checkboxGroupInput("Major_cat", 
                              "Select Major Category:", 
                               get_Major_Cat, 
                               selected = "Agriculture & Natural Resources")

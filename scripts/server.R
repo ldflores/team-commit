@@ -22,8 +22,8 @@ shinyServer(function(input, output) {
   
   # make a boxplot as output$boxplot
  output$box <- renderPlot({
-   choose <- selected %>% filter(Major_category == input$Major_category)
-   g <- ggplot(get_data, aes(x = Major_category, y = Median, color = Major_category)) +
+   choose <- selected %>% filter(Major_category == input$Major_cat)
+   g <- ggplot(choose, aes(x = Major_category, y = Median, color = Major_category)) +
      geom_boxplot()
    g + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
      ggtitle("Boxplot of Range of Salaries \nfor Different Majors") +
