@@ -35,7 +35,7 @@ shinyServer(function(input, output) {
       xlab("Major Category") +
       ylab("Salary Range")
   })
-  
+  #make a scatter plot of unemployment rate
   output$scatter2 <- renderPlot({
     filtered <- selected %>% filter(Major_category == input$Major_category)
     ggplot(filtered, aes(x = Major, y = Unemployment_rate, color = Major_category)) +

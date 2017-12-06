@@ -60,7 +60,8 @@ shinyUI(fluidPage(
             )
          )
        ),
-        tabPanel("Employment Rates",
+    #Employment rates by major   
+     tabPanel("Employment Rates",
                  sidebarLayout(
                    sidebarPanel(
                      checkboxGroupInput("Major_cat", 
