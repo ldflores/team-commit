@@ -1,3 +1,4 @@
+#load and install libraries needed
 library(shiny)
 library(rsconnect)
 install.packages("shinythemes")
