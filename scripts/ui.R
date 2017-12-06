@@ -25,7 +25,13 @@ shinyUI(fluidPage(
                           
           ),
           mainPanel(
-            plotOutput("scatter")
+            plotOutput("scatter"),
+            p("This graph lets the user view the different median pay and variabilities of one 
+              or more major categories. It also shows which majors are larger than others. 
+              Information like this lets a student looking into career options gain some valuable
+              insight up front and directly from data instead of opinions. A student that cares about
+              the variability of salaries as well as the size of their major classes should definitely
+              browse this interactive graph!")
            )
           )
         ),
@@ -49,7 +55,7 @@ shinyUI(fluidPage(
                 greatest difference between the highest and the lowest salaries. A student looking 
                 to major in a field of engineering should know that it has a high variance in salary.
                 The major categories with the lowest median salaries are education majors. A student 
-                looking tp pursue education will find this information valuable. ")
+                looking to pursue education will find this information valuable. ")
             )
          )
        )

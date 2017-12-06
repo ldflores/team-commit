@@ -10,14 +10,19 @@ get_data <- read.csv('all-ages.csv', stringsAsFactors = FALSE, header = TRUE)
 selected <- get_data %>% mutate(salary_variability = P75th - P25th)
 get_Major_Cat <- unique(c(selected$Major_category))
 
+
 shinyServer(function(input, output) {
-  # make a scatter plot that compares salaries across categories of majors
+  # make a scatter plot that compares salaries across categories of majors, weighs size based on number of students
+  # in the selected major(s)
   output$scatter <- renderPlot({
     filtered <- selected %>% filter(Major_category == input$Major_category)
-    ggplot(filtered, aes(x = salary_variability, y = Median, color = Major_category)) + 
-      xlab("Salary Variability") + ylab("Median Salary") +
+    ggplot(filtered, aes(x = salary_variability, y = Median, color = Major_category, size = Total)) + 
+      labs(x = 'Salary Variability', y = 'Median Salary', color = 'Category of Major') +
       ggtitle("Variablity in Salaries by College Majors") +
-      geom_point()
+      scale_size_area(max_size = 20) +
+      geom_point(alpha = 0.6) +
+      theme_bw() +
+      theme()
   })
   
   # make a boxplot that chooses a category in a major, and graphs either single or side by side boxplot depending on input
