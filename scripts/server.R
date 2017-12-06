@@ -38,9 +38,12 @@ shinyServer(function(input, output) {
   #make a scatter plot of unemployment rate
   output$scatter2 <- renderPlot({
     filtered <- selected %>% filter(Major_category == input$Major_ct)
-    ggplot(filtered, aes(x = Major, y = Unemployment_rate, color = Major_category)) +
+    ggplot(filtered, aes(x = Major, y = Unemployment_rate, color = Major_category, size = Total)) +
+      labs(x = "Majors", y = "Unemployment Rate", color = "Category of Major") +
       theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
-      geom_point()
+      ggtitle("Unemployment Rates of Different Majors") +
+      scale_size_area(max_size = 10) +
+      geom_point(alpha = 0.6)
     
   })
 })

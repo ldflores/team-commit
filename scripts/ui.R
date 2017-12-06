@@ -70,7 +70,13 @@ shinyUI(fluidPage(
                                         selected = "Agriculture & Natural Resources")
                    ),
                 mainPanel(
-                plotOutput("scatter2")
+                plotOutput("scatter2"),
+                p("This graph shows the unemployment rates for respective majors. This is helpful for a student to know
+                  because it can show how competitive the job market is in different fields. This is valuable knowledge
+                  for students when they are deciding upon a career and a future. The size of the dots in the plot is 
+                  representative of the number of students graduating with that major. This shows the popularity of that 
+                  major, and how many people are employed after graduation. This information will help students unsure of 
+                  their future. ")
                 ) 
            )
        )
